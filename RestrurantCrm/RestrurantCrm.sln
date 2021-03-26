@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{B14EC48D-E552-4BC9-9E85-A2836D0A2E3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apis", "Apis\Apis.csproj", "{CE8EEBC2-D466-40AD-AE1F-FCA12717A9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repo", "Repo\Repo.csproj", "{03F44E9A-DC52-4002-BA7E-26F368EC4B97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvDisplay", "TvDisplay\TvDisplay.csproj", "{DE43C0E6-F1ED-46AA-AC26-C6044767E005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM", "CRM\CRM.csproj", "{00669679-F33E-4BD3-9B54-784992BCAE3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{5B1ED27F-20B1-4DF9-A611-F0068BD25477}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B14EC48D-E552-4BC9-9E85-A2836D0A2E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14EC48D-E552-4BC9-9E85-A2836D0A2E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14EC48D-E552-4BC9-9E85-A2836D0A2E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14EC48D-E552-4BC9-9E85-A2836D0A2E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8EEBC2-D466-40AD-AE1F-FCA12717A9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8EEBC2-D466-40AD-AE1F-FCA12717A9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8EEBC2-D466-40AD-AE1F-FCA12717A9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8EEBC2-D466-40AD-AE1F-FCA12717A9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F44E9A-DC52-4002-BA7E-26F368EC4B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F44E9A-DC52-4002-BA7E-26F368EC4B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F44E9A-DC52-4002-BA7E-26F368EC4B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F44E9A-DC52-4002-BA7E-26F368EC4B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE43C0E6-F1ED-46AA-AC26-C6044767E005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE43C0E6-F1ED-46AA-AC26-C6044767E005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE43C0E6-F1ED-46AA-AC26-C6044767E005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE43C0E6-F1ED-46AA-AC26-C6044767E005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00669679-F33E-4BD3-9B54-784992BCAE3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00669679-F33E-4BD3-9B54-784992BCAE3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00669679-F33E-4BD3-9B54-784992BCAE3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00669679-F33E-4BD3-9B54-784992BCAE3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B1ED27F-20B1-4DF9-A611-F0068BD25477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B1ED27F-20B1-4DF9-A611-F0068BD25477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B1ED27F-20B1-4DF9-A611-F0068BD25477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B1ED27F-20B1-4DF9-A611-F0068BD25477}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0350E539-883C-4976-BA5E-DD57F666AF86}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/avadesh
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Apis\\Apis.csproj
+		SccProjectName1 = Apis
+		SccLocalPath1 = Apis
+		SccProjectUniqueName2 = CRM\\CRM.csproj
+		SccProjectName2 = CRM
+		SccLocalPath2 = CRM
+		SccProjectUniqueName3 = Demo\\Demo.csproj
+		SccProjectName3 = Demo
+		SccLocalPath3 = Demo
+		SccProjectUniqueName4 = Repo\\Repo.csproj
+		SccProjectName4 = Repo
+		SccLocalPath4 = Repo
+		SccProjectUniqueName5 = TvDisplay\\TvDisplay.csproj
+		SccProjectName5 = TvDisplay
+		SccLocalPath5 = TvDisplay
+		SccProjectUniqueName6 = Web\\Web.csproj
+		SccProjectName6 = Web
+		SccLocalPath6 = Web
+	EndGlobalSection
+EndGlobal

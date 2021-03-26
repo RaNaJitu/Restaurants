@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Repo.Models.MailConfigModel>
+@{
+    ViewBag.Title = "Smtp Servers";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <a href="/SmtpServers/add"><h4 class="card-title"> <i class="fas fa-plus"></i> Create New Smtp Servers</h4></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table data-table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>name</th>
+                                        <th>SmtpHost</th>
+                                        <th>SmtpUserId</th>
+                                        <th>CreatedOn</th>
+                                        <th>IsActive</th>
+                                        <th style="min-width: 100px">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.ProviderName</td>
+                                            <td>@item.SmtpHost</td>
+                                            <td>@item.SmtpUserId</td>
+                                            <td>@item.CreatedOn</td>
+                                            <td>@item.IsActive</td>
+                                            <td>
+                                                <div class="flex align-items-center list-user-action">
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="/SmtpServers/add"><i class="ri-add-box-line"></i></a>
+
+                                                  
+
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="/SmtpServers/Save/@item.Id"><i class="ri-pencil-line"></i></a>
+
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="/SmtpServers/Delete/@item.Id"><i class="ri-delete-bin-line"></i></a>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

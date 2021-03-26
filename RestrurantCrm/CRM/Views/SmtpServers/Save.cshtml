@@ -1,0 +1,188 @@
+﻿@model Repo.Models.MailConfigModel
+@{
+    ViewBag.Title = "Smtp Servers Form";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Smtp Servers Form</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.Id)
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Provider Name</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ProviderName, new { @class = "form-control", @placeholder = "Enter Name" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>This will be used by operation</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Smtp Domain</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.SmtpDomain, new { @class = "form-control", @placeholder = "Code" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Required to Identity the domain</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Smtp Host</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.SmtpHost, new { @class = "form-control", @placeholder = "Enter Url" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SMTP Host IP or Domain name</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Smtp Html?</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.CheckBoxFor(m => m.SmtpHtml, new { @class = "form-control", @placeholder = "Enter Add1" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Check if content is html</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>SMTP UserId</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.SmtpUserId, new { @class = "form-control", @placeholder = "Enter Add4" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SMTP User ID</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Smtp Password</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.SmtpPassword, new { @class = "form-control", @placeholder = "Enter Add2" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SMTP user password provide by the SMTP Server</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is SSL?</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.CheckBoxFor(m => m.SmtpSSL, new { @class = "form-control", @placeholder = "Enter Add3" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Check if SSL is supporting</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Smtp Port</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.SmtpPort, new { @class = "form-control", @placeholder = "Enter SmtpPort" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SSL : 587 , Non-SSL - 25</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>IsAPI?</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.CheckBoxFor(m => m.IsAPI, new { @class = "form-control", @placeholder = "Enter Add5" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Check of API is avaible</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Api Base Url</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ApiBaseUrl, new { @class = "form-control", @placeholder = "Enter Add5" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>API Base or URL</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Api Key</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ApiKey, new { @class = "form-control", @placeholder = "Enter Add5" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Provide sending API Key</p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>IsDefault?</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.CheckBoxFor(m => m.IsDefault, new { @class = "form-control", @placeholder = "Enter Add5" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Choose to make default incase multiple partner</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Active </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                                            @Html.CheckBoxFor(x => x.IsActive, new { @class = "custom-control-input bg-primary", @id = "customCheck-7" })
+                                            <label class="custom-control-label" for="customCheck-7">Active</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Mark Active to avail</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-warning" onclick="goBack()">Back</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

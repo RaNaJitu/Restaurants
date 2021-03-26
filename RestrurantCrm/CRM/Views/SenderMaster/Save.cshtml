@@ -1,0 +1,91 @@
+﻿@model Repo.Models.SenderMasterModel
+@{
+    ViewBag.Title = "Senders Form";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Senders Form</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.Id)
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Sender</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Sender, new { @class = "form-control", @placeholder = "Enter Name" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>For Example - XPay Life &le;info@@xpay.life&gt; </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Code</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Code, new { @class = "form-control", @placeholder = "Code" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Unique Code for operational purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>BCC</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.BCC, new { @class = "form-control", @placeholder = "Enter Url" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>BCC email for every send</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>CC</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.CC, new { @class = "form-control", @placeholder = "Enter Add1" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>CC email for every send</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Active </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                                            @Html.CheckBoxFor(x => x.IsActive, new { @class = "custom-control-input bg-primary", @id = "customCheck-7" })
+                                            <label class="custom-control-label" for="customCheck-7">Active</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Mark Active to avail</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-warning" onclick="goBack()">Back</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

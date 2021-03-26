@@ -1,0 +1,126 @@
+﻿@model Repo.Models.EmailTemplateMaster
+@{
+    ViewBag.Title = "Email Template Form";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Email Template Form</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.Id)
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.TemplateName, new { @class = "form-control", @placeholder = "Enter Template Name" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Please provide Template name</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Template Code</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.TemplateCode, new { @class = "form-control", @placeholder = "Template Code" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Please provide unique template code</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Subject</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.TemplateTitle, new { @class = "form-control", @placeholder = "Enter Subject" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Please provide template title</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>HTML BODY</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.TemplateContent, new { @class = "form-control", @placeholder = "Enter HTML BODY", @autocomplete = "off" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>
+                                            <a href="/EmailTemplates/Preview/@Model.Id" target="_blank">Click here for Preview</a>
+                                            <br />
+                                            <a href="https://html-online.com/editor/" target="_blank">Open HTML Editor</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Remarks</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.TemplateDescription, new { @class = "form-control", @placeholder = "Enter Remarks", @autocomplete = "off" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Please provide template description</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Parameters Code</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                                            </div>
+                                            @Html.DropDownListFor(x => x.ParamCode, new SelectList((IEnumerable<SelectListItem>)HelpersMethods.GetMessageParameter(), "Value", "Text"), "Choose...", new { @class = "custom-select", @autocomplete = "off" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Select Parameter query to replace with data</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Active </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                                            @Html.CheckBoxFor(x => x.IsActive, new { @class = "custom-control-input bg-primary", @id = "customCheck-7" })
+                                            <label class="custom-control-label" for="customCheck-7">Active</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Mark Active to avail</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-warning" onclick="goBack()">Back</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

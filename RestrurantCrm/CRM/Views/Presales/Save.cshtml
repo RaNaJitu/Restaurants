@@ -1,0 +1,155 @@
+﻿@model Repo.Models.BloggingDbModel
+@{
+    ViewBag.Title = "Project Form";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Blog Form</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.Id)
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Title</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", @placeholder = "Enter Title" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SEO Friendly Title</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Brief</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.Breif, new { @class = "form-control", @placeholder = "Article Brief" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Short and to the point for SEO purpose.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Photo</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Photo, new { @class = "form-control", @placeholder = "Photo" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Upload photo in image store and save the link here</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Caption</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Caption, new { @class = "form-control", @placeholder = "Caption" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Photo Caption with Location and Photographer name</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Taglines</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Taglines, new { @class = "form-control", @placeholder = "Taglines" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>For Example - Food, travel, tech, science</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Category</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Category, new { @class = "form-control", @placeholder = "Category" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>For Example. Food, Entertainment, Travel...etc.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Long Details</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.LongDetails, new { @class = "form-control quill-editor", @placeholder = "Long Details" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Details articles</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>AuthorName</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control", @placeholder = "AuthorName" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Who is writing the articles</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Remarks</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.Remarks, new { @class = "form-control", @placeholder = "Remarks" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Remarks for Internal Purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Active </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                                            @Html.CheckBoxFor(x => x.IsActive, new { @class = "custom-control-input bg-primary", @id = "customCheck-7" })
+                                            <label class="custom-control-label" for="customCheck-7">Active</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Mark Active to avail</p>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-warning" onclick="goBack()">Back</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

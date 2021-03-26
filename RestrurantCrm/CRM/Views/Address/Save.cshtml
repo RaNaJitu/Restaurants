@@ -1,0 +1,178 @@
+﻿@model Repo.Models.AddressDbModel
+@{
+    ViewBag.Title = "Address Form";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Adddress Form</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.Id)
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Code</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Code, new { @class = "form-control", @placeholder = "Enter Code" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Address unique Code</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Line1</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.Line1, new { @class = "form-control", @placeholder = "Article Brief" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Line1</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Line2</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.Line2, new { @class = "form-control", @placeholder = "Article Brief" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Line2</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Line3</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.Line3, new { @class = "form-control", @placeholder = "Article Brief" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Line3</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>People Code</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.DropDownListFor(x => x.PeopleCode, new SelectList((IEnumerable<SelectListItem>)HelperClasses.PeopleName(), "Value", "Text"), "Choose...", new { @class = "custom-select", @autocomplete = "off"})
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>People Code</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>City</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.City, new { @class = "form-control", @placeholder = "Photo" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>City</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>StateCode</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.StateCode, new { @class = "form-control", @placeholder = "Caption" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Photo Caption with Location and Photographer name</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>CountryCode</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.CountryCode, new { @class = "form-control", @placeholder = "Taglines" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>For Example - Food, travel, tech, science</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Landmark</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Landmark, new { @class = "form-control", @placeholder = "Category" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Nearest Landmark</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>PIN</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.PIN, new { @class = "form-control", @placeholder = "Long Details" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Details articles</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Remarks</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.Remarks, new { @class = "form-control", @placeholder = "Remarks" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Remarks for Internal Purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Active </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                                            @Html.CheckBoxFor(x => x.IsActive, new { @class = "custom-control-input bg-primary", @id = "customCheck-7" })
+                                            <label class="custom-control-label" for="customCheck-7">Active</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Mark Active to avail</p>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-warning" onclick="goBack()">Back</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

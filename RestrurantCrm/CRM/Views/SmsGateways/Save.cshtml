@@ -1,0 +1,160 @@
+﻿@model Repo.Models.SmsConfigModel
+@{
+    ViewBag.Title = "Sms Gateways Form";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Sms Gateways Form</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.Id)
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ProviderName, new { @class = "form-control", @placeholder = "Enter Name" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Name for Operation Purpose</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Provider UserName</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ProviderUserName, new { @class = "form-control", @placeholder = "Code" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SMS Gateway username</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Provider Password</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ProviderPassword, new { @class = "form-control", @placeholder = "Enter Add1" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SMS gateway password</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Provider BaseUrl</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ProviderBaseUrl, new { @class = "form-control", @placeholder = "Enter Url" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SMS Gateway Base url</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Provider SenderId</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.ProviderSenderId, new { @class = "form-control", @placeholder = "Enter Add2" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>SMS Gateway Sender ID</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Add1</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Add1, new { @class = "form-control", @placeholder = "Enter Add3" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Future Purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Add2</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Add2, new { @class = "form-control", @placeholder = "Enter Add3" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Future Purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>ADD3</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Add3, new { @class = "form-control", @placeholder = "Enter Add3" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Future Purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>ADD4</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Add4, new { @class = "form-control", @placeholder = "Enter Add4" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Future Purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>ADD5</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.Add5, new { @class = "form-control", @placeholder = "Enter Add5" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Future Purpose</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Active </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                                            @Html.CheckBoxFor(x => x.IsActive, new { @class = "custom-control-input bg-primary", @id = "customCheck-7" })
+                                            <label class="custom-control-label" for="customCheck-7">Active</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Mark Active to avail</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-warning" onclick="goBack()">Back</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

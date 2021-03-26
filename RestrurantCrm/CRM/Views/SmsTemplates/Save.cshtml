@@ -1,0 +1,112 @@
+﻿@model Repo.Models.SmsTemplateModel
+@{
+    ViewBag.Title = "SMS Template Form";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">SMS Template Form</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form method="post">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.Id)
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.TemplateName, new { @class = "form-control", @placeholder = "Enter Name" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Template Name for operational purpose</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Code</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextBoxFor(m => m.TemplateCode, new { @class = "form-control", @placeholder = "Enter Code" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Template code should be unique For Example - 2020MAR2020</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Body</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.TemplateContent, new { @class = "form-control", @placeholder = "Enter Body", @autocomplete = "off" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>
+                                            Paste the HTML code of Template <br />
+                                            <a href="https://html-online.com/editor/" target="_blank">HTML Editor</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Remarks</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        @Html.TextAreaFor(m => m.TemplateDescription, new { @class = "form-control", @placeholder = "Enter Remarks", @autocomplete = "off" })
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Remarks for Operation Purpose</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Parameters Code</label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                                            </div>
+                                            @Html.DropDownListFor(x => x.ParamCode, new SelectList((IEnumerable<SelectListItem>)HelpersMethods.GetMessageParameter(), "Value", "Text"), "Choose...", new { @class = "custom-select", @autocomplete = "off" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Select Parameter query to replace with data</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-2 Form-Label">
+                                        <label>Is Active </label>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                                            @Html.CheckBoxFor(x => x.IsActive, new { @class = "custom-control-input bg-primary", @id = "customCheck-7" })
+                                            <label class="custom-control-label" for="customCheck-7">Active</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group col-md-4 Form-Helper">
+                                        <p>Mark Active to avail</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-warning" onclick="goBack()">Back</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

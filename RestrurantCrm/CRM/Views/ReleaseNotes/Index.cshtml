@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Repo.Models.ReleaseNotesModel>
+@{
+    ViewBag.Title = "Release Notes";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <a href="/ReleaseNotes/add"><h4 class="card-title"> <i class="fas fa-plus"></i> Create New Release Notes</h4></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table data-table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Title</th>
+                                        <th>is_active</th>
+                                        <th>created_on</th>
+                                        <th style="min-width: 100px">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.is_active</td>
+                                            <td>@item.created_on</td>
+                                            <td>
+                                                <div class="flex align-items-center list-user-action">
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="/ReleaseNotes/add"><i class="ri-add-box-line"></i></a>
+
+                                                    
+
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="/ReleaseNotes/Save/@item.Id"><i class="ri-pencil-line"></i></a>
+
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="/ReleaseNotes/Delete/@item.Id"><i class="ri-delete-bin-line"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

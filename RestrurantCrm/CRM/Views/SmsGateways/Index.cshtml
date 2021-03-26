@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Repo.Models.SmsConfigModel>
+@{
+    ViewBag.Title = "Sms Gateways";
+}
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <a href="/SmsGateways/add"><h4 class="card-title"> <i class="fas fa-plus"></i> Create New Sms Gateways</h4></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table data-table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>UserName</th>
+                                        <th>Sender ID</th>
+                                        <th>IsActive</th>
+                                        <th>CreatedOn</th>
+                                        <th style="min-width: 100px">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.ProviderName</td>
+                                            <td>@item.ProviderUserName</td>
+                                            <td>@item.ProviderSenderId</td>
+                                            <td>@item.IsActive</td>
+                                            <td>@item.CreatedOn</td>
+                                            <td>
+                                                <div class="flex align-items-center list-user-action">
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="/SmsGateways/add"><i class="ri-add-box-line"></i></a>
+
+                                                   
+
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="/SmsGateways/Save/@item.Id"><i class="ri-pencil-line"></i></a>
+
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="/SmsGateways/Delete/@item.Id"><i class="ri-delete-bin-line"></i></a>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
